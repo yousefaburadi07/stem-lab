@@ -12,7 +12,7 @@ int echo1 = 12;
 int trig2 = 11;
 int echo2 = 13;
 
-int baseSpeed = 115;     
+   
 
 void setup() {
   pinMode(enA, OUTPUT);
@@ -31,6 +31,8 @@ void setup() {
 }
 
 void loop() {
+
+  int baseSpeed = 100;  
   int distanceRight = getDistance(trig1, echo1);
   Serial.print(distanceRight);
   Serial.println("right cm");
@@ -46,6 +48,7 @@ void loop() {
     moveRobot(baseSpeed * 0.45, baseSpeed*0.85);
   } 
   else {
+    int baseSpeed = 200;
     moveRobot(baseSpeed , baseSpeed* 0.85);
   }
   delay(50);
